@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "charliermarsh.ruff",
+    "ms-azuretools.vscode-docker",
+    "github.vscode-github-actions",
+    "hashicorp.terraform",
+    "redhat.vscode-yaml",
+    "timonwong.shellcheck",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "github.copilot"
+  ]
+}

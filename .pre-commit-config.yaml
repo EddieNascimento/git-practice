@@ -1,0 +1,25 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: detect-private-key
+      - id: check-added-large-files
+        args: ["--maxkb=1000"]
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: mixed-line-ending
+
+  - repo: https://github.com/koalaman/shellcheck-precommit
+    rev: v0.11.0
+    hooks:
+      - id: shellcheck
+
+  - repo: local
+    hooks:
+      - id: no-dotenv-commit
+        name: block committing real .env files
+        entry: bash -c 'git diff --cached --name-only | grep -E "(^|/)\.env(\.[^.]+)?$" | grep -vE "\.example$" && exit 1 || exit 0'
+        language: system
+        pass_filenames: false
